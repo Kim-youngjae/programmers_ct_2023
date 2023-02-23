@@ -15,7 +15,8 @@ class Solution {
         } else if (angle >= 91) {
             return 3;
         }
-
+        
         return 1;
     }
+
 }
