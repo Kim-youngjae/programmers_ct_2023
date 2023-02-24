@@ -1,4 +1,4 @@
-package com.lionpackage.plion;
+package com.lec.plion;
 
 class 병사 {
     String 이름;

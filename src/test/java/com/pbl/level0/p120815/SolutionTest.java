@@ -20,5 +20,9 @@ class SolutionTest {
         assertThat(new Solution().solution(10)).isEqualTo(5);
     }
 
-
+    @Test
+    @DisplayName("4 -> 2")
+    void t3() {
+        assertThat(new Solution().solution(4)).isEqualTo(2);
+    }
 }
