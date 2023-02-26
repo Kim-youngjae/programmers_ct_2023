@@ -10,6 +10,7 @@ class Main {
     public static void main(String[] args) {
         new 사람();
         // 출력 : 사람이 초기화 됩니다.
+
     }
 }
 
