@@ -13,7 +13,7 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("cccCCC의 결과는 CCCccc")
+    @DisplayName("abCdEfghIJ 결과는 ABcDeFGHij")
     void t2() {
         assertThat(new Solution().solution("abCdEfghIJ")).isEqualTo("ABcDeFGHij");
     }
