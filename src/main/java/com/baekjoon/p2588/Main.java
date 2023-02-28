@@ -1,6 +1,6 @@
 package com.baekjoon.p2588;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,23 +10,16 @@ public class Main {
         int n1 = sc.nextInt();
         int n2 = sc.nextInt();
 
-        System.out.println("n1 = " + n1);
-        System.out.println("n2 = " + n2);
-
-        int[] nums = new int[3];
-
-        System.out.println("n1 * n2 = " + (n1 * n2));
-
+        ArrayList<Integer> al = new ArrayList<>(3);
         char[] chars = String.valueOf(n2).toCharArray();
 
         for (char c : chars) {
-            System.out.println(Integer.valueOf(c - 48));
-            int i = n1 * Integer.valueOf(c - 48);
-            System.out.println("i = " + i);
+            al.add(n1 * Integer.valueOf(c - 48));
         }
 
-
-        System.out.println("Arrays.toString(nums) = " + Arrays.toString(nums));
+        for (int i = al.size() - 1; i >= 0; i--) {
+            System.out.println(al.get(i));
+        }
+        System.out.println((n1 * n2));
     }
-
 }
