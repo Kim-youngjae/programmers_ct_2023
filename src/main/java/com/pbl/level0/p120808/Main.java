@@ -34,9 +34,25 @@ class Solution {
             rNumer = numer1 + numer2;
         }
 
-        answer[0] = rNumer;
-        answer[1] = rDenom;
+        // 최대 공약수로 나누어 기약 분수 만들기
+        int gcd = gcd(rNumer, rDenom);
+
+        answer[0] = rNumer / gcd;
+        answer[1] = rDenom / gcd;
 
         return answer;
+    }
+    static int gcd(int a, int b) {
+        if (a < b) {
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
+        while (b != 0) { // 유클리드 호제법
+            int r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
     }
 }
