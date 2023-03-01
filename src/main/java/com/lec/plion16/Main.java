@@ -5,24 +5,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // equals() 실습
+        Value v1 = new Value(10);
+        Value v2 = new Value(10);
 
-        int a = 0;
-
-        while (true) {
-            try {
-                System.out.printf("숫자 입력칸 : ");
-                a = sc.nextInt();
-                sc.nextLine(); // 버퍼를 비운다.
-                break;
-            } catch (InputMismatchException e) {
-                sc.nextLine();
-                System.out.println("숫자만 입력하세요.");
-            }
+        if (v1.equals(v2)) {
+            System.out.println("같음");
+        } else {
+            System.out.println("다름");
         }
-        System.out.printf("입력된 숫자 : %d\n", a);
+    }
+}
 
-        sc.close();
+class Value {
+    int value;
+
+    Value(int value) {
+        this.value = value;
     }
 
+    public boolean equals(Object o) {
+        if (!(o instanceof Value)) { // 참조변수 형변환 전에는 instanceof로 확인해야 함
+            return false;
+        }
+        Value v = (Value) o;
+        return this.value == v.value;
+    }
 }
