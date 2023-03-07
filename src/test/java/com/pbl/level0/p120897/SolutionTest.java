@@ -1,0 +1,17 @@
+package com.pbl.level0.p120897;
+
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
+class SolutionTest {
+
+    @Test
+    @DisplayName("24 -> [1, 2, 3, 4, 6, 8, 12, 24]")
+    void t1() {
+        assertThat(new Solution().solution(24)).isEqualTo(new int[]{1, 2, 3, 4, 6, 8, 12, 24});
+    }
+}
