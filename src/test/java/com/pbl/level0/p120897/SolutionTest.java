@@ -14,4 +14,12 @@ class SolutionTest {
     void t1() {
         assertThat(new Solution().solution(24)).isEqualTo(new int[]{1, 2, 3, 4, 6, 8, 12, 24});
     }
+
+    @Test
+    @DisplayName("29 -> [1, 29]")
+    void t2() {
+        assertThat(new Solution().solution(29)).isEqualTo(new int[]{1, 29});
+    }
+
+
 }
