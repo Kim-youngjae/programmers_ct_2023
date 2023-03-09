@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         for (int i = 1; i <= 100; i++) {
-            System.out.println(i + " = " + Arrays.toString(new Solution().solution(i)));
+            System.out.println(i + " = " + Arrays.toString(new Solution().solution2(i)));
         }
 
     }
@@ -59,13 +59,10 @@ class Solution {
 
         //약수를 저장할 리스트
         List<Integer> list = new ArrayList<>();
-
-//        if (n == 1) {
-//            return new int[]{1};
-//        }
+        list.add(n);
 
         //절반까지만 반복 그 이후는 의미 없음
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n / 2; i++) {
             if (n % i == 0) {
                 list.add(i);
             }
