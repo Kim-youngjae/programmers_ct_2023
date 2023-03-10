@@ -1,4 +1,7 @@
-package com.lec.plion22;
+package com.lec.plion22Polynomial;
+
+
+// 후위 표기식 구현
 
 import java.util.*;
 
@@ -142,6 +145,12 @@ class Polynomial {
         stack.clear();
         stack2.clear();
         return answer;
+    }
+
+    public static int calc3() {
+        // 재귀를 이용한 괄호가 포함된 사칙연산
+
+        return 0;
     }
 }
 
