@@ -7,19 +7,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 //        100000보다 작은 자연수 중에서 3 또는 5의 배수를 모두 더하면 얼마인가요?(인텔리제이 사용가능, 정답에 숫자만 입력)
-        System.out.println("sumAll() = " + sumAll());
+//        System.out.println("method1() = " + method1());
 
 //        피보나치 수열에서 50000000이하이면서 짝수인 항의 합은 얼마인가요?(인텔리제이 사용가능, 정답에 숫자만 입력)
-        System.out.println("method2() = " + method2());
+//        System.out.println("method2() = " + method2());
 
 //        1600851475143의 소인수 중에서 가장 큰 수를 구하세요.
-        System.out.println("method3() = " + method3());
 
     }
 
-    private static long sumAll() {
+    private static long sol1() {
         long sum = 0L;
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i <= 100000; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
                 sum += i;
             }
@@ -27,7 +26,7 @@ public class Main {
         return sum;
     }
 
-    static long method2() {
+    static long sol2() {
         final int NUMBER = 50000000;
 
         List<Long> list = new ArrayList<>();
@@ -88,7 +87,47 @@ public class Main {
                 break;
             }
         }
+        System.out.println("answer.toString() = " + answer.toString());
+
+        long sum = 1;
+        for (int i : answer) {
+            sum *= i;
+        }
+        System.out.println("sum = " + sum);
+        if ((long) sum == n) {
+            System.out.println("같음");
+        }
 
         return answer.get(answer.size() - 1);
+    }
+
+    public void solution() {
+        int callCount = 0;
+
+        int maxValue = -1;
+
+        for (int i = 9999; i >= 1000; i--) {
+            if ( i * i < maxValue) break; // 최적화
+
+            for (int j = i; j >= 1000; j--) { // j = i 로 최적화
+                int num = i * j;
+
+                if (num <= maxValue) continue;  // 최적화
+
+                if (isPalindrome(num)) {
+                    maxValue = num;
+                }
+            }
+        }
+
+        System.out.println(callCount);
+
+        System.out.println(maxValue);
+    }
+
+    private boolean isPalindrome(int num) {
+        String numStr = num + "";
+
+        return numStr.equals(new StringBuilder(numStr).reverse().toString());
     }
 }
